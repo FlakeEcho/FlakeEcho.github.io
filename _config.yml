@@ -1,0 +1,14 @@
+# Site settings
+title: Reproducing Timing-dependent Flaky Tests in Android Apps via A Single Delay
+description: This page contains the dataset used in the ISSTA 2024 submission titled "Reproducing Timing-dependent Flaky Tests in Android Apps via A Single Delay".
+# baseurl: "" # the subpath of your site, e.g. /blog
+
+# User settings
+username: Reproducing Timing-dependent Flaky Tests in Android Apps via A Single Delay
+user_description: This page contains the dataset used in the ISSTA 2024 submission titled "Reproducing Timing-dependent Flaky Tests in Android Apps via A Single Delay".
+user_title: This page contains the dataset used in the ISSTA 2024 submission titled "Reproducing Timing-dependent Flaky Tests in Android Apps via A Single Delay".
+
+github_username:  FlakeEcho
+
+exclude: ['package.json', 'src', 'node_modules', 'vendor']
+
