@@ -12,8 +12,10 @@
       border: 0px solid #ccc;
       padding: 10px;
       border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       font-weight: bold;
+      font-size: 20px;
+      transition: all 0.3s ease;
     }
 
     .floating-menu ul {
@@ -23,12 +25,14 @@
     }
 
     .floating-menu ul li {
-      margin-bottom: 5px;
+      margin-bottom: 15px;
     }
 
     .floating-menu ul li a {
       text-decoration: none;
       color: #222;
+      display: block;
+      transition: color 0.3s ease;
     }
 
     .floating-menu ul li a:hover {
@@ -48,7 +52,7 @@
     <li><a href="#abstract-section">Abstract</a></li>
     <li><a href="#dataset-section">Dataset</a></li>
     <li><a href="#workflow-section">Workflow</a></li>
-    <li><a href="#operation-section">Operation Demonstration</a></li>
+    <li><a href="#operation-section">Operation Guidance</a></li>
     <li><a href="#experiment-section">Experiment Result</a></li>
   </ul>
 </div>
@@ -132,9 +136,40 @@
 </div>
 
 <div class="user-details" id="operation-section">
-  <h1 style="font-weight: bold;" >Operation Demonstration</h1>
+  <h1 style="font-weight: bold;" >Operation Guidance</h1>
+  <style>
+    ol {
+      padding-left: 20px; /* 调整列表的左边距 */
+    }
+    li {
+      text-align: left; /* 文本左对齐 */
+    }
+  </style>
 
-  <img src="/assets/image/operation.gif" alt="operation" style="width: 1000px; height: auto;">
+  <ol>
+    <li>
+      <h3>Prerequisites</h3>
+      <ul>
+        <li>Android emulator with API 30 with EdXposed Framework installed</li>
+        <li>Android Studio (Hedgehog | 2023.1.1 Canary 10) with YAMP plugin installed</li>
+        <li>Java 17 & Gradle 8.0 & Android Gradle Plugin 8.0.0</li>
+      </ul>
+    </li>
+
+    <li>
+      <h3>Usage</h3>
+      <ul>
+        <li>Install the app module and the timelord module of FlakeEcho to an Android emulator with API 30 with EdXposed Framework installed. You may check if the app module and the timelord module are correctly installed in the EdXposedManager module list.</li><br>
+        <li>To trace the messageQueue and the GUI related operations during an instrumentation test, make sure the control switch of the app module on and the timelord module off in the EdXposedManager.</li><br>
+        <li>Run the instrumentation test in the Android Studio with YAMP plugin on to record the runtime method call stack with an output of .trace file. The log of GUI related operations should be generated under the /sdcard directory in the emulator with the format of {timestamp}.txt.</li><br>
+        <li>Run the Analyzer module with the input of the .trace file and the {timestamp}.txt. It will generate a static_id_list.txt file under the /sdcard directory in the emulator, which contains the static id list.</li><br>
+        <li>To inject a single delay in the instrumentation test, make sure the control switch of the app module off and the timelord module on in the EdXposedManager. Then run the instrumentation test again and the delay will be injected to reproduce the failure of flaky test.</li>
+      </ul>
+    </li>
+  </ol>
+
+
+<!--  <img src="/assets/image/operation.gif" alt="operation" style="width: 1000px; height: auto;">-->
 
     <br>
 </div>
