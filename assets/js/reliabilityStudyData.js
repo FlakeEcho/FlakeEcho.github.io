@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create headers
     var toolHeader = document.createElement('th');
     toolHeader.textContent = '';
-    toolHeader.style.width = '120px';
+    toolHeader.style.width = '112px';
     headerRow.appendChild(toolHeader);
 
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create headers
     toolHeader = document.createElement('th');
     toolHeader.textContent = '';
-    toolHeader.style.width = '120px';
+    toolHeader.style.width = '107px';
     headerRow.appendChild(toolHeader);
 
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create headers
     toolHeader = document.createElement('th');
     toolHeader.textContent = '';
-    toolHeader.style.width = '120px';
+    toolHeader.style.width = '107px';
     headerRow.appendChild(toolHeader);
 
 
