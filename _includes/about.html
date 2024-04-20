@@ -52,6 +52,7 @@
     <li><a href="#abstract-section">Abstract</a></li>
     <li><a href="#dataset-section">Dataset</a></li>
     <li><a href="#workflow-section">Workflow</a></li>
+    <li><a href="#reliability-study">Runtime Difference</a></li>
     <li><a href="#operation-section">Operation Guidance</a></li>
     <li><a href="#experiment-section">Experiment Result</a></li>
   </ul>
@@ -134,6 +135,36 @@
   <p style="text-align: left;">The workflow of FlakReaper is depicted in the following figure. FlakReaper takes the app under test and the test case as input to perform a dynamic analysis. During the analysis, FlakReaper monitors and records events during execution and GUI access operations. Besides, it captures the execution traces of a test run. Afterward, the collected runtime data and crash stacks are analyzed to identify event races that could have caused the failure. Subsequently, FlakReaper runs the test by enforcing an order among the events involved in the race to manifest the failure. To establish an order between two events, FlakReaper delays one event to allow the other to execute first. If the test run successfully reproduces the observed flaky behavior, FlakReaper provides the delay configuration as output.</p>
   <img src="/assets/image/workflow.png" alt="workflow" style="width: 1000px; height: auto;">
 </div>
+<div class="user-details" id="reliability-study">
+  <h1 style="font-weight: bold;" >The Entropy of Runtime Difference</h1>
+  <p style="text-align: left;">Our study compared the efficiency of failure reproduction by FlakeEcho against other tools. Despite all tools failing to reproduce every case, a fair comparison was made on shared test sets. Results showed that FlakeEcho generally reproduces failures more quickly and with fewer test runs, highlighting its effectiveness, especially beyond the second reproduction attempt.</p>
+  <img src="/assets/image/time_of_reproducing_failures_for_X_times.png" alt="workflow" style="width: 600px; height: auto;">
+  <p style="text-align: left;">The following tables present the statistics of the study, wherein the vertical columns correspond to our instrument, FlakeEcho, juxtaposed with tools such as FlakeScanner, Shaker, and 100Rerun. The horizontal rows are designated as the number of reproduced failures, with the content enumerating the average time taken, delineated in seconds.</p>
+</div>
+<body>
+
+<div id="reliability-study-container">
+  <!-- Test results will be displayed here -->
+</div>
+<div style="text-align: center;">Data contrasts FlakeEcho with FlakeScanner</div>
+<br>
+
+<div id="reliability-study-container2">
+  <!-- Test results will be displayed here -->
+</div>
+<div style="text-align: center;">Data contrasts FlakeEcho with Shaker</div>
+<br>
+
+<div id="reliability-study-container3">
+  <!-- Test results will be displayed here -->
+</div>
+<div style="text-align: center;">Data contrasts FlakeEcho with 100Rerun</div>
+<br>
+
+<!-- Include the data.js file -->
+<script src="assets/js/reliabilityStudyData.js"></script>
+
+</body>
 
 <div class="user-details" id="operation-section">
   <h1 style="font-weight: bold;" >Operation Guidance</h1>
